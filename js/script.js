@@ -1,7 +1,9 @@
-const texts = document.querySelectorAll(".main-text");
-let delay = 500;
+let hasScrolled = false;
 
-setTimeout(() => {
+function runAfterScroll() {
+  const texts = document.querySelectorAll(".main-text");
+  let delay = 500;
+
   texts.forEach((item, index) => {
     setTimeout(() => {
       item.style.opacity = 1;
@@ -9,7 +11,18 @@ setTimeout(() => {
       item.classList.add("appear");
     }, index * delay);
   });
-},2000);
+  hasScrolled = true;
+}
+
+window.addEventListener("scroll", () => {
+  const scrolled = window.scrollY; 
+  const viewportHeight = window.innerHeight;
+
+  if (scrolled >= viewportHeight && !hasScrolled) {
+    runAfterScroll();
+  }
+});
+
 
 const video = document.getElementById("main-video");
 
@@ -14205,3 +14218,4 @@ function updateVideoSource() {
 updateVideoSource();
 
 window.addEventListener("resize", updateVideoSource);
+
