@@ -18,14 +18,6 @@ window.onload = function(){
     video.play();
   });
 }
-const getPath = window.location.href;
-function autoRedirect() {
-  setTimeout(function () {
-    window.location.href = getPath + "second.html";
-  }, 7000);
-}
-
-autoRedirect();
 
 function ssc_init() {
   if (document.body) {
