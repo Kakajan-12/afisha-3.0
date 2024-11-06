@@ -26,7 +26,7 @@ function autoRedirect() {
   }, 7000);
 }
 
-autoRedirect();
+// autoRedirect();
 
 function ssc_init() {
   if (document.body) {
