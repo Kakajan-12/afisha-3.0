@@ -18,8 +18,7 @@ window.onload = function(){
     video.play();
   });
 }
-
-const getPath = widow.location.href;
+const getPath = window.location.href;
 function autoRedirect() {
   setTimeout(function () {
     window.location.href = getPath + "/second.html";
