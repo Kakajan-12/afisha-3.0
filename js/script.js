@@ -1,9 +1,7 @@
-let hasScrolled = false;
-
-function runAfterScroll() {
+window.onload = function(){  
   const texts = document.querySelectorAll(".main-text");
   let delay = 500;
-
+  
   texts.forEach((item, index) => {
     setTimeout(() => {
       item.style.opacity = 1;
@@ -11,27 +9,22 @@ function runAfterScroll() {
       item.classList.add("appear");
     }, index * delay);
   });
-  hasScrolled = true;
+  const video = document.getElementById("main-video");
+  
+  video.src =
+    "./source/Gen_3_Alpha_Turbo_1125522594,_Make_an_action_anima,_DALL·E_2024.mp4";
+  video.addEventListener("ended", function () {
+    video.currentTime = 0;
+    video.play();
+  });
+}
+function autoRedirect() {
+  setTimeout(function () {
+    window.location.pathname = "/second.html";
+  }, 5000);
 }
 
-window.addEventListener("scroll", () => {
-  const scrolled = window.scrollY; 
-  const viewportHeight = window.innerHeight;
-
-  if (scrolled >= viewportHeight && !hasScrolled) {
-    runAfterScroll();
-  }
-});
-
-
-const video = document.getElementById("main-video");
-
-video.src =
-  "./source/Gen_3_Alpha_Turbo_1125522594,_Make_an_action_anima,_DALL·E_2024.mp4";
-video.addEventListener("ended", function () {
-  video.currentTime = 0;
-  video.play();
-});
+autoRedirect();
 
 function ssc_init() {
   if (document.body) {
@@ -14193,7 +14186,7 @@ function updateVideoSource() {
   // const source = document.getElementById("videoSource");
 
   if (window.innerWidth <= 576) {
-    video.src = "./source/mobile-version3.mp4";
+    video.src = "./source/mobile-version2.mp4";
     video.style.top = "unset";
     video.style.left = "unset";
     video.style.transform = "unset";
