@@ -19,7 +19,7 @@ window.onload = function(){
   });
 }
 
-const getPath = widow.location.pathname;
+const getPath = widow.location.href;
 function autoRedirect() {
   setTimeout(function () {
     window.location.pathname = getPath + "/second.html";
