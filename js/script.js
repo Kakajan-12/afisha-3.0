@@ -22,11 +22,11 @@ window.onload = function(){
 const getPath = widow.location.href;
 function autoRedirect() {
   setTimeout(function () {
-    window.location.pathname = getPath + "/second.html";
+    window.location.href = getPath + "/second.html";
   }, 7000);
 }
 
-// autoRedirect();
+autoRedirect();
 
 function ssc_init() {
   if (document.body) {
