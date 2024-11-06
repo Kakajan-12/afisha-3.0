@@ -21,7 +21,7 @@ window.onload = function(){
 function autoRedirect() {
   setTimeout(function () {
     window.location.pathname = "/second.html";
-  }, 5000);
+  }, 7000);
 }
 
 autoRedirect();
